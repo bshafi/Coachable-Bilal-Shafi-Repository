@@ -12,12 +12,6 @@ class ListNode:
         self.val = val
         self.next = _next
 
-'''
-
-
-'''
-
-
 
 class Solution:
     """
@@ -64,5 +58,4 @@ class Solution:
             lt_tail.next = ge_head
 
             return lt_head
-        else:
-            return ge_head
+        return ge_head
