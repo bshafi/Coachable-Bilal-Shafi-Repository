@@ -16,8 +16,6 @@ class CountWord:
         if self.count != rhs.count:
             return self.count < rhs.count
         return self.word < rhs.word
-
-
 class Solution:
     """
         Solution to leetcode problem
@@ -33,7 +31,6 @@ class Solution:
 
         arr = [CountWord(-count, word) for (word, count) in counts.items()]
         heapify(arr)
-
         res = []
         for _i in range(k):
             if len(arr) == 0:
