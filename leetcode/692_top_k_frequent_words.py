@@ -11,7 +11,7 @@ class CountWord:
     """
     def __init__(self, count, word):
         self.count = count
-        self.word = word 
+        self.word = word
     def __lt__(self, rhs):
         if self.count != rhs.count:
             return self.count < rhs.count
