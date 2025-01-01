@@ -8,7 +8,10 @@ mid = 0
 from typing import List
 
 class Solution:
-    def searchInsert(self, nums: List[int], target: int) -> int:
+    """
+        Solution to leet code problems
+    """
+    def search_insert(self, nums: List[int], target: int) -> int:
         """
         Find the target in a sorted array. 
         If the target is not in the array returns the position where it would be inserted
