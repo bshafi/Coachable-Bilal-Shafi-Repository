@@ -1,5 +1,17 @@
+"""
+    Find all anagrams in a string
+"""
+
+from typing import List
+
 class Solution:
-    def findAnagrams(self, s: str, p: str) -> List[int]:
+    """
+        Find all anagrams in a strings
+    """
+    def find_anagrams(self, s: str, p: str) -> List[int]:
+        """
+            Find all anagrams in a strings
+        """
         if len(p) > len(s):
             return []
 
@@ -24,5 +36,5 @@ class Solution:
 
             last_c = s[i - len(p) + 1]
             counts[ord('z') - ord(last_c)] -= 1
-        
+
         return indices
