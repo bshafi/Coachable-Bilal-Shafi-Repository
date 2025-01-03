@@ -1,14 +1,14 @@
 """
-            Find the longest chain of pairs where the last element of 
-            the previous pair is strictly less than the first element of the next pair.
+    Find the longest chain of pairs where the last element of 
+    the previous pair is strictly less than the first element of the next pair.
 """
 
 from typing import List
 
 class Solution:
     """
-            Find the longest chain of pairs where the last element of 
-            the previous pair is strictly less than the first element of the next pair.
+        Find the longest chain of pairs where the last element of 
+        the previous pair is strictly less than the first element of the next pair.
     """
     def find_longest_chain(self, pairs: List[List[int]]) -> int:
         """
