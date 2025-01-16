@@ -1,19 +1,13 @@
-"""
-    784. Letter case permutation
-"""
 from typing import List
 
 class Solution:
-    """
-    784. Letter case permutation
-    """
-    def letter_case_permutation(self, s: str) -> List[str]:
+    def letterCasePermutation(self, s: str) -> List[str]:
         """
         Generates all permutations of upper and lowercase english characters.
         """
         if len(s) == 0:
             return []
-        permutations = self.letter_case_permutation(s[1:])
+        permutations = self.letterCasePermutation(s[1:])
         c = s[0]
         letters = [c]
         if ord('a') <= ord(c) <= ord('z') or ord('A') <= ord(c) <= ord('Z'):
