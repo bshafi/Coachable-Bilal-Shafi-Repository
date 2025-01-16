@@ -29,8 +29,8 @@ def is_alien_sorted(words: List[str], order: str) -> bool:
         return True
 
     alien_order = {}
-    for i in range(len(order)):
-        alien_order[order[i]] = i
+    for i, c in enumerate(order):
+        alien_order[c] = i
 
     for i in range(1, len(words)):
         prev = words[i - 1]
