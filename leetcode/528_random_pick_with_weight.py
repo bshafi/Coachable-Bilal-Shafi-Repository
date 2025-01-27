@@ -15,7 +15,7 @@ class Solution:
         self.cum_sum[0] = w[0]
 
         for i in range(1, len(w)):
-            self.cum_sum[i] = self.cum_sum[i - 1] + w[i]   
+            self.cum_sum[i] = self.cum_sum[i - 1] + w[i]
 
     def pick_index(self) -> int:
         "Randomly generate a index based on the weights"
