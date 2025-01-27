@@ -74,10 +74,9 @@ class LRUCache:
         node = self.map.get(key, None)
         if node is None:
             return -1
-        else:
-            node = self.pop_node(node)
-            self.push_front(node)
-            return node.val[1]
+        node = self.pop_node(node)
+        self.push_front(node)
+        return node.val[1]
 
 
     def put(self, key: int, value: int) -> None:
