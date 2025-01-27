@@ -24,6 +24,8 @@ class Solution:
         left = 0
         right = len(self.cum_sum)
 
+        res = None
+
         while left < right:
             mid = (left + right) // 2
 
@@ -33,8 +35,11 @@ class Solution:
             upper = self.cum_sum[mid]
 
             if lower <= target <= upper:
-                return mid
+                res = mid
+                break
             if target > upper:
                 left = mid + 1
             else:
                 right = mid
+
+        return res
