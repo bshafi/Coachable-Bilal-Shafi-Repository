@@ -35,10 +35,9 @@ def quick_select(nums, target, lo, hi):
 
     if i <= target < j:
         return nums[target]
-    elif target >= j:
+    if target >= j:
         return quick_select(nums, target, j, hi)
-    else:
-        return quick_select(nums, target, lo, i - 1)
+    return quick_select(nums, target, lo, i - 1)
 
 def find_kth_largest(nums: List[int], k: int) -> int:
     "Kth largest"
