@@ -21,8 +21,7 @@ def dfs(node, cur_num):
 
     if node.left is None and node.right is None:
         return new_num
-    else:
-        return dfs(node.left, new_num) + dfs(node.right, new_num)
+    return dfs(node.left, new_num) + dfs(node.right, new_num)
 
 def sum_numbers(root: Optional[TreeNode]) -> int:
     """
