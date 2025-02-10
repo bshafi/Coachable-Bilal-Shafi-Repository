@@ -19,7 +19,7 @@ def find_parents(node, prev, parents):
     find_parents(node.left, node, parents)
     find_parents(node.right, node, parents)
 
-def dfs(node, dist, k, parents, visited, nodes):
+def dfs(node, dist, k, parents, visited, nodes): # pylint: disable=R0913,R0917
     "863. All Nodes Distance K in Binary Tree"
     if node is None or node in visited:
         return
