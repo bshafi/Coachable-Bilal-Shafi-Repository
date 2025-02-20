@@ -12,29 +12,37 @@ def maximum_swap(num: int) -> int:
     a = num
     i = 0
     while a != 0:
-        digits.append((i, a % 10))
+        digits.append(a % 10)
         a = a // 10
         i += 1
 
-    sorted_digits = sorted(digits, key=lambda x: x[1])
 
-    for i in range(len(digits) - 1, -1, -1):
-        if sorted_digits[i][1] != digits[i][1]:
-            a = sorted_digits[i][0]
-            b = digits[i][0]
+    max_i = 0
+    max_val = digits[0]
 
-            min_sorted_digits = sorted_digits[i]
-            for j in range(0, len(digits)):
-                if (sorted_digits[j][1] == min_sorted_digits[1] and
-                sorted_digits[j][0] < min_sorted_digits[0]):
-                    a = sorted_digits[j][0]
-                    min_sorted_digits = sorted_digits[j]
+    best_lo_i = 0
+    best_hi_i = 0
+    best_change_in_value = 0
 
-            digits[a], digits[b] = digits[b], digits[a]
-            break
+    for i, cur in enumerate(digits):
+        cur_change_in_value = (
+            (-cur * (10 ** i) - digits[max_i] * (10 ** max_i)) +
+            (cur * (10 ** max_i) + digits[max_i] * (10 ** i))
+        )
+
+        if cur_change_in_value > best_change_in_value:
+            best_lo_i = i
+            best_hi_i = max_i
+            best_change_in_value = cur_change_in_value
+
+        if digits[i] > max_val:
+            max_i = i
+            max_val = digits[i]
+
+    digits[best_lo_i], digits[best_hi_i] = digits[best_hi_i], digits[best_lo_i]
 
     res = 0
     while digits:
-        res = (10 * res) + digits.pop()[1]
+        res = (10 * res) + digits.pop()
 
     return res
