@@ -13,7 +13,7 @@ def find_kth_positive(arr: List[int], k: int) -> int:
 
     expecting = 1
     missing = 0
-    for i, num in range(len(arr)):
+    for i, num in enumerate(arr):
         diff = num - expecting
         if missing + diff >= k:
             if i == 0:
